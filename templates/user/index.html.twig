@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h1 class="mb-4">Formulaire d'inscription</h1>
+    <p>Veuillez remplir ces champs pour procéder à votre inscription !</p>
+    <hr>
+
+
+    {{ form_start(form, {'action': path('app_user')}) }}
+
+    <div class="col-md-12">
+    {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Enter Email'}}) }}
+    {{ form_errors(form.email) }} {# Affiche les messages d'erreur pour l'email #}
+    </div>
+
+    <div class="col-md-12">
+        {{ form_label(form.password, 'Password', {'label_attr': {'class': 'form-label'}}) }}
+        {{ form_widget(form.password, {'attr': {'class': 'form-control', 'placeholder': 'Enter Password'}}) }}
+        {{ form_errors(form.password) }} {# Affiche les messages d'erreur pour le mot de passe #}
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+
+    {{ form_end(form) }}
+</div>
